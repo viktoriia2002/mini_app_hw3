@@ -2,7 +2,7 @@ export default{
         name: "TheCooperCar",
         props:["cooper"],
         data: function(){
-            return{
+            return {
                 myModel: this.cooper.model,
                 myPrice: this.cooper.price,
                 myDesk: this.cooper.description,
@@ -14,9 +14,10 @@ export default{
         template: 
         `<li @click="logClicked">
             <p> {{ cooper.model }} </p>
-                <a href="" class="removeCooper">
-                <img :src="'images/' + cooper.img1" alt='cooper.model + " img"'>
-                </a>
+            <img class="showCooper" :src="'images/' + cooper.img1" alt='cooper.model + " img"'>
+               <a href="" class="removeCooper">
+               
+                </a> 
                 
         </li>`,
 
@@ -28,6 +29,8 @@ export default{
                 logClicked(){
                     console.log(`fired from inside ${this.cooper.model} the component!`);
                 }
+                
             }
+            
    
 }
