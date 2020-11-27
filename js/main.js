@@ -1,22 +1,7 @@
 import { fetchData } from "./modules/TheDataMiner.js";
+import CooperCar from "./modules/TheCooperCar.js";
 
 (() => {
-    Vue.component("cooper-car", {
-        props:["cooper"],
-
-        template: `<li>
-                
-                <p> {{ cooper.model }}</p>
-                <a href="" class="removeCooper">
-                <img :src="'images/' + cooper.img1" alt="cooper img">
-                </a>
-                
-            </li>`,
-
-            created: function(){
-                console.log(`created ${this.cooper.model} cars`);
-            }
-    });
 
     let vue_vm = new Vue({
         // link Vue to an element in our HTML
@@ -62,7 +47,11 @@ import { fetchData } from "./modules/TheDataMiner.js";
                 this.showBioData = this.showBioData ? false : true;
 
                 this.currentCooperData = target;
+                // this.$delete(this.coopers, target);
             }
+        },
+        components: {
+            "cooper-car": CooperCar
         }
     }).$mount("#app"); // also connects Vue to your wrapper in HTML
 })();
