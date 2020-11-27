@@ -1,6 +1,23 @@
 import { fetchData } from "./modules/TheDataMiner.js";
 
 (() => {
+    Vue.component("cooper-car", {
+        props:["cooper"],
+
+        template: `<li>
+                
+                <p> {{ cooper.model }}</p>
+                <a href="" class="removeCooper">
+                <img :src="'images/' + cooper.img1" alt="cooper img">
+                </a>
+                
+            </li>`,
+
+            created: function(){
+                console.log(`created ${this.cooper.model} cars`);
+            }
+    });
+
     let vue_vm = new Vue({
         // link Vue to an element in our HTML
         //el: "#app",

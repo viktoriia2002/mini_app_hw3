@@ -10,20 +10,24 @@
 </head>
 <body>
     <main id="app">
-        <img src="images/logo.png" alt="logo" width="250" height="250">
+        <img src="images/logo.png" alt="logo" width="400" height="180">
         <h1 @click="clickHeader">{{ content }}</h1>
+       
+        <!-- <cooper-car></cooper-car>
+        <cooper-car></cooper-car> -->
 
         
         
 
         <!-- show the prof data in profs array -->
-        <ul>
-            <li v-for="cooper in coopers">
-                <p>{{ cooper.model }} </p>
-                  <p> {{ cooper.img1 }}</p>
-                <a href="" class="removeCooper" @click.prevent="removeCooper(cooper)" :class="{'cooper-button-modifier' : removeAformat}"> DISCOVER THE {{cooper.model}}</a><!--:href=""-->
-            </li>
-        </ul>
+         <ul>
+             <!--this is a custom vue component defined in main.js-->
+            <cooper-car v-for="cooper in coopers" :cooper="cooper" :key="cooper.id"></cooper-car>
+            <!--<li v-for="cooper in coopers">
+                  <p> {{ cooper.model }}</p>
+                <a href="" class="removeCooper" @click.prevent="removeCooper(cooper)" :class="{'cooper-button-modifier' : removeAformat}">{{cooper.img1}}</a>:href=""
+            </li>-->
+        </ul> 
 
         <section class="bio-data" :class="{'show-bio' : showBioData}">
             <h1 class="information"> {{ currentCooperData.description }} </h1>

@@ -1,19 +1,4 @@
-.removeCooper{
-    padding: 8px 12px;
-    color:white;
-    background-color: #333;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 8px;
-
-    &:hover {
-        background-color: blue;
-    }
-}
-
-.prof-button-modifier{
-    text-decoration: none;
-}
+@import "modules/_coopersection";
 
 .show-bio {
     display: block !important;

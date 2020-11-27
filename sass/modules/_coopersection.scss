@@ -1,0 +1,19 @@
+.cooper-header{
+    color: #333;
+}
+
+.removeCooper{
+    padding: 8px 12px;
+    color:#333;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        background-color: blue;
+        opacity:0.5;
+    }
+}
+
+.prof-button-modifier{
+    text-decoration: none;
+}
