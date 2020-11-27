@@ -1,26 +1,29 @@
+import { fetchData } from "./modules/TheDataMiner.js";
+
 (() => {
     let vue_vm = new Vue({
         // link Vue to an element in our HTML
         //el: "#app",
 
         data: {
-            message: "Hello from Vue!",
-            anotherMessage: "more text, so simple! much winning",
+            content: "Mini Cooper Models",
+            anotherMessage: "Discover More About Mini!",
             removeAformat: true,
             showBioData: false,
+            coopers: [],
+            currentCooperData: {}
 
-            profs: [
-                { name: "Justin", role: "coordinator", nickname: "nitsuJ"},
-                { name: "John", role: "prof", nickname: "super chill" },
-                { name: "Joe", role: "prof", nickname: "Teddy Bear" }
-                
-            ]
         },
          
         mounted: function (){
             console.log("vue is mounted!");
             //alert("error 404");
-            this.profs.push({name: "Jarrod", role: "supermodel prof", nickname:"Zoolander"})
+
+            fetchData("./includes/index.php")
+            .then(data => {
+                data.forEach(cooper => this.coopers.push(cooper));
+            })
+            .catch(err => error(err));
         },
 
         updated: function() {
@@ -35,11 +38,13 @@
             clickHeader() {
                 console.log("clicked on the header");
             },
-            removeProf(target) {
+            removeCooper (target) {
                 //remove this from the professors array
-                console.log('clicked to remove prof', target, target.name);
+                console.log('clicked to view mini coopers data', target, target.name);
 
-                this.showBioData = this.showBioData ? false : true
+                this.showBioData = this.showBioData ? false : true;
+
+                this.currentCooperData = target;
             }
         }
     }).$mount("#app"); // also connects Vue to your wrapper in HTML

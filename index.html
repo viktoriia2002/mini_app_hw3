@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Working with Vue</title>
+    <title>Mini Coopers Models</title>
     <link rel="stylesheet" href="css/main.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
 </head>
 <body>
     <main id="app">
-        <h1 @click="clickHeader">{{ message }}</h1>
-        <p>{{anotherMessage}}</p>
+        <img src="images/logo.png" alt="logo" width="250" height="250">
+        <h1 @click="clickHeader">{{ content }}</h1>
+
+        
         
 
         <!-- show the prof data in profs array -->
         <ul>
-            <li v-for="prof in profs">
-                <p>Prof Name: {{ prof.name }}, Role: {{ prof.role }}</p>
-                <a href="" class="remove-prof" @click.prevent="removeProf (prof)" :class="
-                {'prof-button-modifier' : removeAformat}"> Remove {{prof.name}}</a><!--:href=""-->
+            <li v-for="cooper in coopers">
+                <p>{{ cooper.model }} </p>
+                  <p> {{ cooper.img1 }}</p>
+                <a href="" class="removeCooper" @click.prevent="removeCooper(cooper)" :class="{'cooper-button-modifier' : removeAformat}"> DISCOVER THE {{cooper.model}}</a><!--:href=""-->
             </li>
         </ul>
 
         <section class="bio-data" :class="{'show-bio' : showBioData}">
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore nihil ipsam et itaque nesciunt dignissimos atque. Natus adipisci minus quibusdam ullam inventore. Eius voluptatem laboriosam odit eos cumque unde inventore!
-            </p>
+            <h1 class="information"> {{ currentCooperData.description }} </h1>
+            <p class="information2"> {{ currentCooperData.features }} </p>
+            <p class="information3">{{ currentCooperData.img2 }}</p>
+            <p class="information4">{{ currentCooperData.img3 }}</p>
         </section>
 
 
