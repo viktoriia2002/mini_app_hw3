@@ -12,14 +12,13 @@ export default{
     },
 
     template: 
-    `<li @click="logClicked">
-        <p> {{ cooper.model }} </p>
-        <img class="showCooper" :src="'images/' + cooper.img1" alt='cooper.model + " img"'>
-           <a href="" class="removeCooper">
-           
-            </a> 
+    `<div class="img-template" @click="logClicked">
+        <p class="mini"> {{ cooper.model }} </p>
+        <img class="car" :src="'images/' + cooper.img2" alt='cooper.model + " img"'>
+        
+          
             
-    </li>`,
+    </div>`,
 
         created: function(){
             console.log(`created ${this.cooper.model} cars`);

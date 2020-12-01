@@ -1,6 +1,81 @@
-.cooper-header{
-    color: #333;
+.mainContent{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    .mainLogo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #333;
+        width: 400px; 
+        height: 180px;
+    }
+    .header{
+        font-size: 48px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+    }
+    .discover{
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+    }
+    
 }
+
+.bio-data{
+   background-color: aliceblue;
+    .cars{
+        
+    .information{
+        font-size: 25px;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+    }
+    .information2{
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        font-size: 20px;
+    }
+}
+    .img-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        display: grid;
+        
+
+        .info2{
+            width: 500px;
+            height: 300px;
+        }
+        .info3{
+            width: 500px;
+            height: 300px;
+        }
+    }
+}
+.img-template{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    
+.car{
+    width: 500px;
+    height: 300px;
+    }
+.mini{
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+    
+}   
+
+
+
 
 .removeCooper{
     padding: 8px 12px;
@@ -13,6 +88,3 @@
     }
 }
 
-.prof-button-modifier{
-    text-decoration: none;
-}

@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Coopers Models</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
 </head>
 <body>
     <main id="app">
-        <img src="images/logo.png" alt="logo" width="400" height="180">
-        <h1 @click="clickHeader">{{ content }}</h1>
-        <p>{{ anotherMessage }}</p>
+        <div class="mainContent">
+        <img class="mainLogo" src="images/logo.png" alt="logo" >
+        <h1 class="header" @click="clickHeader">{{ content }}</h1>
+        <p class="discover">{{ anotherMessage }}</p>
+    </div>
         <!-- <cooper-car></cooper-car>
         <cooper-car></cooper-car> -->
 
@@ -28,13 +32,19 @@
                 <a href="" class="removeCooper" @click.prevent="removeCooper(cooper)" :class="{'cooper-button-modifier' : removeAformat}">{{cooper.img1}}</a>:href=""
             </li>-->
         </ul> 
-
+        
+    
         <section class="bio-data" :class="{'show-bio' : showBioData}">
+            <div class="cars">
             <h1 class="information"> {{ currentCooperData.description }} </h1>
             <p class="information2"> {{ currentCooperData.features }} </p>
-            <img :src="'images/' + currentCooperData.img3" class="information2" alt="car">
-            <img :src="'images/' + currentCooperData.img2" class="information3" alt="car">
+        </div>
+            <div class="img-container">
+            <img :src="'images/' + currentCooperData.img3" class="info2" alt="car">
+            <img :src="'images/' + currentCooperData.img1" class="info3" alt="car">
+        </div>
         </section>
+   
 
 
 
