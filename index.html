@@ -12,7 +12,7 @@
     <main id="app">
         <img src="images/logo.png" alt="logo" width="400" height="180">
         <h1 @click="clickHeader">{{ content }}</h1>
-       
+        <p>{{ anotherMessage }}</p>
         <!-- <cooper-car></cooper-car>
         <cooper-car></cooper-car> -->
 
@@ -22,7 +22,7 @@
         <!-- show the prof data in profs array -->
          <ul>
              <!--this is a custom vue component defined in main.js-->
-            <cooper-car v-for="cooper in coopers" :cooper="cooper" :key="cooper.id"></cooper-car>
+            <cooper-car @showmydata="removeCooper" v-for="cooper in coopers" :cooper="cooper" :key="cooper.id"></cooper-car>
             <!--<li v-for="cooper in coopers">
                   <p> {{ cooper.model }}</p>
                 <a href="" class="removeCooper" @click.prevent="removeCooper(cooper)" :class="{'cooper-button-modifier' : removeAformat}">{{cooper.img1}}</a>:href=""
@@ -32,8 +32,8 @@
         <section class="bio-data" :class="{'show-bio' : showBioData}">
             <h1 class="information"> {{ currentCooperData.description }} </h1>
             <p class="information2"> {{ currentCooperData.features }} </p>
-            <!-- <p class="information3">{{ currentCooperData.img2 }}</p>
-            <p class="information4">{{ currentCooperData.img3 }}</p> -->
+            <img :src="'images/' + currentCooperData.img3" class="information2" alt="car">
+            <img :src="'images/' + currentCooperData.img2" class="information3" alt="car">
         </section>
 
 
